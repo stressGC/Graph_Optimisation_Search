@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 /**
  * @author Georges
@@ -12,7 +12,7 @@ public class App {
     public static void main(String args[]) 
     { 
     	// create our nodes
-    	LinkedList<Node> nodes = new LinkedList<Node>();
+    	ArrayList<Node> nodes = new ArrayList<Node>();
     	
     	for(int i = 1; i < 11; i++) {
     		String nodeName = GetLetter(i);
@@ -22,9 +22,11 @@ public class App {
     	
         // create the graph given in above figure
     	Graph graph = new Graph(nodes);
+    	
+    	
+    	graph.addEdgeBetween("A", "B", 50);
+    	
     	graph.printAllNodes();
-    	
-    	
     	
         /*int numberOfVertices = 5; 
         Graph graph = new Graph(numberOfVertices); 

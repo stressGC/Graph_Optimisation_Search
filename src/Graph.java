@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 /**
  * @author Georges
@@ -6,15 +6,33 @@ import java.util.LinkedList;
  */
 
 public class Graph {
-    private LinkedList<Node> nodes;
+    private ArrayList<Node> nodes;
     
-    public Graph(LinkedList<Node> nodes) {
+    public Graph(ArrayList<Node> nodes) {
     	this.nodes = nodes;
     }
     
+    public void addEdgeBetween(String nodeNameA, String nodeNameB, int distance) {
+    	Node nodeA = this.getNodeByName(nodeNameA);
+    	Node nodeB = this.getNodeByName(nodeNameB);
+    	
+    	// let's add to both nodes, since the graph isnt oriented
+    	nodeA.addEdgeTo(nodeB, distance);
+    	nodeB.addEdgeTo(nodeA, distance);
+    }
+    
     public void printAllNodes() {
-    	for(Node n : nodes) {
+    	for(Node n : this.nodes) {
     		System.out.println(n.toString());
     	}
+    }
+    
+    private Node getNodeByName(String name) {
+    	for(Node n : this.nodes) {
+    		if(name.equals(n.getName())) {
+    			return n;
+    		}
+    	}
+    	return null;
     }
 }

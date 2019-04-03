@@ -11,5 +11,9 @@ public class Edge {
 		this.to = to;
 		this.distance = distance;
 	}
+	
+	public String toString() {
+		return to.getName() + "[" + distance + "]";
+	}
 
 }
