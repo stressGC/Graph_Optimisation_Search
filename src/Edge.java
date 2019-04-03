@@ -13,7 +13,7 @@ public class Edge {
 	}
 	
 	public String toString() {
-		return to.getName() + "[" + distance + "]";
+		return "-> " + to.getName() + " [" + distance + "]";
 	}
 
 }

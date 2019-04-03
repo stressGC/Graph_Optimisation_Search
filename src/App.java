@@ -14,7 +14,8 @@ public class App {
     	// create our nodes
     	ArrayList<Node> nodes = new ArrayList<Node>();
     	
-    	for(int i = 1; i < 11; i++) {
+    	// 7 = till 'F'
+    	for(int i = 1; i < 7; i++) {
     		String nodeName = GetLetter(i);
     		Node newNode = new Node(nodeName);
     		nodes.add(newNode);
@@ -23,24 +24,27 @@ public class App {
         // create the graph given in above figure
     	Graph graph = new Graph(nodes);
     	
-    	
+    	/* from A */
     	graph.addEdgeBetween("A", "B", 50);
+    	graph.addEdgeBetween("A", "C", 50);
+    	graph.addEdgeBetween("A", "E", 50);
+    	graph.addEdgeBetween("A", "F", 50);
     	
+    	/* from B */
+    	graph.addEdgeBetween("B", "D", 50);
+    	graph.addEdgeBetween("B", "E", 50);
+    	
+    	/* from C */
+    	graph.addEdgeBetween("C", "D", 50);
+    	graph.addEdgeBetween("C", "E", 50);
+    	
+    	/* from D */
+    	graph.addEdgeBetween("D", "E", 50);
+    	graph.addEdgeBetween("D", "F", 50);
+    	
+    	/* print all for debugging purpose */
     	graph.printAllNodes();
-    	
-        /*int numberOfVertices = 5; 
-        Graph graph = new Graph(numberOfVertices); 
-        graph.addEdge(0, 1); 
-        graph.addEdge(0, 4); 
-        graph.addEdge(1, 2); 
-        graph.addEdge(1, 3); 
-        graph.addEdge(1, 4); 
-        graph.addEdge(2, 3); 
-        graph.addEdge(3, 4); */
-       
-        // print the adjacency list representation of  
-        // the above graph 
-        //graph.print();
+  
     } 
     
     /**
