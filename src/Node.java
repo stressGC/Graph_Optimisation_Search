@@ -23,6 +23,20 @@ public class Node {
 		this.edges.add(newEdge);
 	}
 	
+	public Node getNextNode() {
+		Node closestNode = null;
+		int closestDistance = Integer.MAX_VALUE;
+		
+		for(Edge e : this.edges) {
+			if (e.getDistance() < closestDistance) {
+				closestNode = e.getLinkedNode();
+				closestDistance = e.getDistance();
+			}
+		}
+		
+		return closestNode;
+	}
+	
 	public String toString() {
 		String message = "Node : '" + this.name + "'";
 		
@@ -30,7 +44,7 @@ public class Node {
 			message += "\n" + e.toString();
 		}
 		
-		message += '\n';
+		message += "\nclosest: " + this.getNextNode().name + "\n";
 		return message;
 	}
 }

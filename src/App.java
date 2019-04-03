@@ -26,21 +26,21 @@ public class App {
     	
     	/* from A */
     	graph.addEdgeBetween("A", "B", 50);
-    	graph.addEdgeBetween("A", "C", 50);
-    	graph.addEdgeBetween("A", "E", 50);
-    	graph.addEdgeBetween("A", "F", 50);
+    	graph.addEdgeBetween("A", "C", 60);
+    	graph.addEdgeBetween("A", "E", 40);
+    	graph.addEdgeBetween("A", "F", 55);
     	
     	/* from B */
-    	graph.addEdgeBetween("B", "D", 50);
-    	graph.addEdgeBetween("B", "E", 50);
+    	graph.addEdgeBetween("B", "D", 35);
+    	graph.addEdgeBetween("B", "E", 20);
     	
     	/* from C */
-    	graph.addEdgeBetween("C", "D", 50);
-    	graph.addEdgeBetween("C", "E", 50);
+    	graph.addEdgeBetween("C", "D", 80);
+    	graph.addEdgeBetween("C", "E", 70);
     	
     	/* from D */
-    	graph.addEdgeBetween("D", "E", 50);
-    	graph.addEdgeBetween("D", "F", 50);
+    	graph.addEdgeBetween("D", "E", 45);
+    	graph.addEdgeBetween("D", "F", 65);
     	
     	/* print all for debugging purpose */
     	graph.printAllNodes();
