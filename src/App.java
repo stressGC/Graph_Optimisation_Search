@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class App {
 
 	/**
+	 * program entry
 	 * @param args
 	 */
     public static void main(String args[]) 
@@ -24,6 +25,7 @@ public class App {
         // create the graph given in above figure
     	Graph graph = new Graph(nodes);
     	
+    	/* lets add some edges */
     	/* from A */
     	graph.addEdgeBetween("A", "B", 50);
     	graph.addEdgeBetween("A", "C", 60);
@@ -45,9 +47,11 @@ public class App {
     	/* print all for debugging purpose */
     	//graph.printAllNodes();
     	
+    	/* lets send some messages */
     	graph.sendMessageBetween("F", "D");
     	graph.sendMessageBetween("D", "A");
     	
+    	/* and print all the nodes so we can see their scores */
     	graph.printAllNodes();
   
     } 
@@ -55,7 +59,6 @@ public class App {
     /**
      * used to get the nth letter of alphabet
      * https://stackoverflow.com/questions/20882656/how-to-get-nth-letter-of-english-alphabet 
-     * 
      * @param int: index in alphabet
      */
     private static String GetLetter(int value)
