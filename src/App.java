@@ -40,9 +40,14 @@ public class App {
     	
     	/* from D */
     	graph.addEdgeBetween("D", "E", 45);
-    	graph.addEdgeBetween("D", "F", 65);
+    	//graph.addEdgeBetween("D", "F", 65);
     	
     	/* print all for debugging purpose */
+    	//graph.printAllNodes();
+    	
+    	graph.sendMessageBetween("F", "D");
+    	graph.sendMessageBetween("D", "A");
+    	
     	graph.printAllNodes();
   
     } 

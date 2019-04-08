@@ -8,7 +8,18 @@ import java.util.ArrayList;
 public class Node {
 	private String name;
 	private ArrayList<Edge> edges;
+	private int score = 0;
 	
+	public int getScore() {
+		return score;
+	}
+	public void setScore(int score) {
+		this.score = score;
+	}
+	
+	public void addScore() {
+		this.setScore(this.getScore() + 1);
+	}
 	public String getName() {
 		return this.name;
 	}
@@ -22,6 +33,15 @@ public class Node {
 		Edge newEdge = new Edge(to, distance);
 		this.edges.add(newEdge);
 	}
+	 
+	public boolean hasDestinationAsNeighbor(Node dest) {
+		for(Edge e : edges) {
+			if(dest.getName().equals(e.getLinkedNode().getName())) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	public Node getNextNode() {
 		Node closestNode = null;
@@ -33,18 +53,17 @@ public class Node {
 				closestDistance = e.getDistance();
 			}
 		}
-		
 		return closestNode;
 	}
 	
 	public String toString() {
-		String message = "Node : '" + this.name + "'";
+		String message = "\nNode : '" + this.name + "'";
 		
 		for(Edge e : edges) {
 			message += "\n" + e.toString();
 		}
 		
-		message += "\nclosest: " + this.getNextNode().name + "\n";
+		message += "\nclosest: " + this.getNextNode().name + "\nscore: " + this.getScore() + "\n";
 		return message;
 	}
 }
